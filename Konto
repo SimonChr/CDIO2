@@ -1,0 +1,24 @@
+package Terningspil;
+
+public class Konto
+
+{
+	private int Pengebeholdning;
+	
+//Konstruktør, spiller starter med 1000 kr
+public Konto()
+{
+	Pengebeholdning = 1000;
+}
+// Henter scoren
+public int getScore()
+{
+	int result = this.Pengebeholdning;
+	return result;
+}
+// Tilføjer en værdi til spillerens score
+public void addScore(int score)
+{
+	this.Pengebeholdning = this.Pengebeholdning + score;
+}
+}
