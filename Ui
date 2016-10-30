@@ -1,1 +1,41 @@
+public class Ui {
 
+public static void main (String [] agrs) {
+	
+	Dice dice = new Dice();
+	Scanner scan = new Scanner(System.in); 
+	
+	Felter [] felt = 	{	//Felterne man kan lande på. 
+		new Felter ("Tower.", 250, false), 
+		new Felter ("Crater.", -100, false), 
+		new Felter ("Palace Gates", 100, false), 
+		new Felter ("Cold Desert", - 20, false), 
+		new Felter ("Walled City", 180, false),
+		new Felter ("Monastary", 0, false),
+		new Felter ("Black Cave", -70, false),
+		new Felter ("Huts in the Mountain", 60, false), 
+		new Felter ("The Werewall", -80, true), 
+		new Felter ("The pit", -50, false), 
+		new Felter ("Goldmine", 650, false)
+		};
+	
+//	for (int i=0; i<2; i++)	{
+//		dice.roll();
+//			if(i==0)	{
+//			hit1 = dice.getFaceValue();}
+//			else	{
+//			hit2 = dice.getFaceValue();
+//			sum = hit1 + hit2;
+//			}
+	
+	System.out.println("Velkommen \nHvor mange spillere er i?");
+	int bruger = scan.nextInt(); 
+	
+	for (int i = 0; i < bruger; i++) { //Mangler player class
+	System.out.println("Indtast spiller " + i +  "'s navn");
+	String name = scan.next(); 
+	//Player player = new player(name);
+	}
+
+	}	
+}
