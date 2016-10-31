@@ -3,40 +3,43 @@ import java.util.Scanner;
 
 public class Ui {
 
-public static void main (String [] agrs) {
-	
-	Dice dice = new Dice();
-	Scanner scan = new Scanner(System.in); 
-	
-	int kast1 = 0;
-	int kast2 = 0; 
-	
-// Spillet starter: 	
-	System.out.println("Velkommen \nHvor mange spillere er i?");
-	int bruger = scan.nextInt(); 
-	
-	for (int i = 0; i < bruger; i++) { //Mangler player class
-	System.out.println("Indtast spiller " + (i+1) +  "'s navn");
-	String name = scan.next(); 
-	//Player player = new player(name);
-	}
-	
-	for (int j = 0; j < bruger; j++) {
-		int sum = 0; 
-		for (int n = 0; n < 2; n++) {
-			dice.roll();
-			//player(name).dice.getFaceValue(); Skal linkes til spilleren
-			if(n==0)
-				kast1 = dice.getFaceValue();					
-			else {
+	public static void main (String [] agrs) {
+
+		Dice dice = new Dice();
+		Scanner scan = new Scanner(System.in); 
+		Spiller spil = new Spiller();
+
+		int kast1 = 0;
+		int kast2 = 0; 
+
+		//	Spillet starter: 	
+		System.out.println("Velkommen \nHvor mange spillere er i?");
+		int bruger = scan.nextInt(); 
+		
+
+		spil.spiller(bruger);
+
+		System.out.println("Lad spillet begynde. \n" + spil.hentNavn(0) + " starter:");
+// while wincon
+		for (int j = 0; j < bruger; j++) {
+			int sum = 0; 
+			for (int n = 0; n < 1; n++) {
+				dice.roll();
+				kast1 = dice.getFaceValue();
+				dice.roll();
 				kast2 = dice.getFaceValue();
-				sum = kast1 + kast2;
-	}}
-		
-		System.out.println(player.name(j) + " landte på " + Felter.feltNavn(sum) + 	//player.name(j) skal rettes så den passer med 
-				" & din penge beholdning ændres med " + Felter.feltVærdi(sum));		//player classen. 
-		
-	}	
-	scan.close();
+				sum=kast1+kast2;
+				
+				System.out.println(spil.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		//player.name(j) skal rettes så den passer med 
+						" & din penge beholdning ændres med " + Felter.feltVærdi(sum));			//player classen. 
+
+				//kontoændring skal kodes
+
+				if (sum == 9){
+					n = -1;
+				} 	//Ekstra tur.	
+			}
+		}	
+		scan.close();
 	}
 }
