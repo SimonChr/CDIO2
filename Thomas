@@ -1,1 +1,42 @@
+public class Ui {
 
+public static void main (String [] agrs) {
+	
+	Dice dice = new Dice();
+	Scanner scan = new Scanner(System.in); 
+	
+	int kast1 = 0;
+	int kast2 = 0; 
+	
+//	Spillet starter: 	
+	System.out.println("Velkommen \nHvor mange spillere er i?");
+	int bruger = scan.nextInt(); 
+	bruger--;
+
+	
+	for (int i = 0; i < bruger; i++) { 
+		System.out.println(Spiller.spiller(i));
+	}
+	scan.close();
+	System.out.println("Lad spillet begynde. \n" + Spiller.hentNavn(1) + " starter:");
+	
+	for (int j = 0; j < bruger; j++) {
+		int sum = 0; 
+		for (int n = 0; n < 2; n++) {
+			dice.roll();
+			if(n==0)
+				kast1 = dice.getFaceValue();					
+			else {
+				kast2 = dice.getFaceValue();
+				sum = kast1 + kast2;
+				if (sum == 9); 	//Ekstra tur.
+				n = 0;
+	}}
+		
+		System.out.println(Spiller.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		//player.name(j) skal rettes så den passer med 
+						" & din penge beholdning ændres med " + Felter.feltVærdi(sum));			//player classen. 
+		
+	}	
+	
+	}
+}
