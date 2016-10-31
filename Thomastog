@@ -1,1 +1,29 @@
+package CDIO2;
+import java.util.Scanner;
+import java.util.ArrayList;
 
+public class Spiller {
+		
+		private String navn;
+		
+		static Scanner scan = new Scanner(System.in);
+		static ArrayList <String> spillerNavn = new ArrayList <String> ();
+		
+	public static String spiller (int i) {
+		
+	
+		System.out.println("Hvad hedder spiller " + (i+1) + "?");
+		spillerNavn.add(scan.next());
+		System.out.println("Spiller " + spillerNavn.get(i) + " er oprettet.");
+		
+		String spiller = spillerNavn.get(i);
+		
+		return spiller;
+	}
+	
+	public static String hentNavn (int i) {
+		String spiller = spiller(i); 
+		return spiller;
+	}		
+	
+}
