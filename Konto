@@ -1,23 +1,25 @@
 import java.util.ArrayList;
 
-
 public class Konto
 {
 	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
+	// Laver en int array der hedder pengebeholdning
 	
+	// En metode der tilføjer et nyt element i arrayet Pengebeholdning 
+	// og sætter penge beholdningen til 1000 som default
 	public static void nyKonto(){
 	Pengebeholdning.add(1000);
 	}
 	
+	// En metode til at hente Pengebeholdning i en bestemt konto
 	public Integer getPengebeholdning (int j) {
 		return Pengebeholdning.get(j);
 	}
 	
-	public static void setPengebeholdning(int pengefund, int j){
-			
+	// En metode til at ændre pengebeholdningen i en bestemt  konto
+	public static void setPengebeholdning(int pengefund, int j)
+	{
 		int nykonto = Konto.Pengebeholdning.get(j) + pengefund;
 		Pengebeholdning.set(j,nykonto);
-		
-
 	}
 }
