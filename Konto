@@ -24,6 +24,11 @@ public class Konto
 		if(nykonto < 0){
 			nykonto=0;
 		}
+		if(nykonto >=3000){
+			Ui.konto3000=true;
+		}
 		Pengebeholdning.set(j,nykonto);
 	}
-}
+
+	}
+
