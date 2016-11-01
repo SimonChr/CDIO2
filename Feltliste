@@ -2,16 +2,9 @@ import java.util.ArrayList;
 
 public class Felter {
 	private static String feltnavn;
-	private int pengeDif;
-	private final static int antalFelter = 12; 
-	private boolean chancen;
 	 
 	public static String hentFeltNavn () {
 		return feltnavn; 
-	}
-	
-	public static int hentAntal () {
-		return antalFelter; 
 	}
 	
 	public static String feltNavn (int sum) {
@@ -34,7 +27,6 @@ public class Felter {
 		
 		return navn;
 	}
-	
 	
 	public static int feltVærdi (int sum) {
 	
