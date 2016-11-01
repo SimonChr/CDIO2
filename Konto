@@ -1,26 +1,23 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Spiller {
-		
-		
-		private Scanner scan = new Scanner(System.in);
-		private ArrayList <String> spillerNavn = new ArrayList <String> ();
-		
-	public void spiller (int bruger) {
-		
+
+public class Konto
+{
+	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
 	
-		for(int i = 0; i < bruger; i++) {
-			System.out.println("Hvad hedder spiller " + (i+1) + "?");
-			spillerNavn.add(scan.next());
-			Konto.nyKonto();
-			System.out.println("Spiller " + spillerNavn.get(i) + " er oprettet.");
-			System.out.println("Konto i har en penge beholdning på " + Konto.Pengebeholdning.get(i));
-		}
+	public static void nyKonto(){
+	Pengebeholdning.add(1000);
 	}
 	
-	public String hentNavn (int i) {
-		return spillerNavn.get(i);
-	}		
+	public Integer getPengebeholdning (int j) {
+		return Pengebeholdning.get(j);
+	}
 	
+	public static void setPengebeholdning(int pengefund, int j){
+			
+		int nykonto = Konto.Pengebeholdning.get(j) + pengefund;
+		Pengebeholdning.set(j,nykonto);
+		
+
+	}
 }
