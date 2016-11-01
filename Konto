@@ -1,27 +1,25 @@
 package Terningspil;
 
-public class Konto
+import java.util.ArrayList;
 
+
+public class Konto
 {
-	private int Pengebeholdning;
+	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
 	
-//Konstruktør, spiller starter med 1000 kr
-public Konto()
-{
-	Pengebeholdning = 1000;
-}
-// Henter scoren
-public int getScore()
-{
-	int result = this.Pengebeholdning;
-	return result;
-}
-// Tilføjer en værdi til spillerens score
-public void addScore(int pengeDif)
-{
-	this.Pengebeholdning = this.Pengebeholdning + pengeDif;
-	if(this.Pengebeholdning < 0){
-		this.Pengebeholdning = 0;
+	public static void Konto(){
+	Pengebeholdning.add(1000);
 	}
-}
+	
+	public Integer getPengebeholdning (int j) {
+		return Pengebeholdning.get(j);
+	}
+	
+	public static void setPengebeholdning(int pengefund, int j){
+			
+		int nykonto = Konto.Pengebeholdning.get(j) + pengefund;
+		Pengebeholdning.set(j,nykonto);
+		
+
+	}
 }
