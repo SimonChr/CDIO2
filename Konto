@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 
+
 public class Konto
 {
 	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
@@ -20,6 +21,9 @@ public class Konto
 	public static void setPengebeholdning(int pengefund, int j)
 	{
 		int nykonto = Konto.Pengebeholdning.get(j) + pengefund;
+		if(nykonto < 0){
+			nykonto=0;
+		}
 		Pengebeholdning.set(j,nykonto);
 	}
 }
