@@ -31,9 +31,12 @@ public class Ui {
 				sum=kast1+kast2;
 				
 				System.out.println(spil.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		//player.name(j) skal rettes så den passer med 
-						" & din penge beholdning ændres med " + Felter.feltVærdi(sum));			//player classen. 
-
-				//kontoændring skal kodes
+						" & din pengebeholdning ændres med " + Felter.feltVærdi(sum));			//player classen. 
+				Konto.setPengebeholdning(Felter.feltVærdi(sum), j);
+				System.out.println(spil.hentNavn(j) + "'s pengebeholdning er nu " + Konto.Pengebeholdning.get(j));
+				//kontoændring skal kodes	
+				
+				
 
 				if (sum == 9){
 					n = -1;
