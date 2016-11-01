@@ -1,6 +1,3 @@
-
-package cdio22;
-
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -16,7 +13,9 @@ public class Spiller {
 		for(int i = 0; i < bruger; i++) {
 			System.out.println("Hvad hedder spiller " + (i+1) + "?");
 			spillerNavn.add(scan.next());
+			Konto.nyKonto();
 			System.out.println("Spiller " + spillerNavn.get(i) + " er oprettet.");
+			System.out.println("Konto i har en penge beholdning på " + Konto.Pengebeholdning.get(i));
 		}
 	}
 	
