@@ -2,7 +2,8 @@ import java.util.ArrayList;
 
 public class Felter {
 	private static String feltnavn;
-
+	
+Private static String felttekst;
 	 
 	public static String hentFeltNavn () {
 		return feltnavn; 
