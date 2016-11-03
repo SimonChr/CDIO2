@@ -1,6 +1,7 @@
+
 import java.util.Scanner;
 
-public class Ui {
+public class Main {
 public static boolean konto3000=false;
 	public static void main (String [] agrs) {
 
@@ -21,14 +22,14 @@ public static boolean konto3000=false;
 		/* Spillet starter */
 		spil.spiller(bruger);
 
-		System.out.println("Lad spillet begynde. \n" + spil.hentNavn(0) + " starter:");
+		System.out.println("\nLad spillet begynde. \n \n" + spil.hentNavn(0) + " starter");
 	
 	
 	/* Henter pengebeholdning fra konto
 	 */
 	while (konto3000==false) { 
 		
-		System.out.println("Tryk 'enter' for at forsætte.");
+	
 		for (int j = 0; j < bruger; j++) {
 			int sum = 0;
 			Felter.trykEnter();
@@ -38,7 +39,7 @@ public static boolean konto3000=false;
 				dice.roll();
 				kast2 = dice.getFaceValue();
 				sum=kast1+kast2;
-				System.out.println(sum);
+				System.out.println("Du er landet på felt " + sum);
 				System.out.println(  Felter.felttekst(sum));
 				System.out.println( spil.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		//player.name(j) skal rettes så den passer med 
 						" & din penge beholdning ændres med " + Felter.feltVærdi(sum)) ;			//player classen. 
@@ -47,10 +48,10 @@ public static boolean konto3000=false;
 				System.out.println(spil.hentNavn(j) + "'s pengebeholdning er nu " + Konto.Pengebeholdning.get(j));
 				System.out.println("");
 				
-
+				//Ekstra tur ved vareulvemur.	
 				if (sum == 10){
 					n = -1;
-				} 	//Ekstra tur ved vareulvemur.	
+				} 	
 			}
 		}
 		
