@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class Main {
@@ -6,6 +5,7 @@ public static boolean konto3000=false;
 	public static void main (String [] agrs) {
 
 		Dice dice = new Dice();
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in); 
 		Spiller spil = new Spiller();
 		
@@ -33,6 +33,8 @@ public static boolean konto3000=false;
 		for (int j = 0; j < bruger; j++) {
 			int sum = 0;
 			Felter.trykEnter();
+			if (konto3000== true)
+				return;
 			for (int n = 0; n < 1; n++) {
 				dice.roll();
 				kast1 = dice.getFaceValue();
@@ -53,7 +55,12 @@ public static boolean konto3000=false;
 					n = -1;
 				} 	
 			}
+			if (konto3000 == true){
+				System.out.println("Tillykke du har vundet " + spil.hentNavn(j) + "!");
+			return;
+			}
 		}
+	
 		
 	}
 		scan.close();
