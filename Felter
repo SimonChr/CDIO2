@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Felter {
 	private static String feltnavn;
-	private static String felttekst;
 
 	 
 	public static String hentFeltNavn () {
@@ -84,6 +83,7 @@ public class Felter {
 			}
 			
 		public static void trykEnter () {
+			System.out.println("Tryk 'enter' for at forsætte.");
 			try 
 			{ System.in.read(); }
 			catch (Exception e) {}
