@@ -82,5 +82,10 @@ public class Felter {
 				
 				return navn;
 			}
-		
+			
+		public static void trykEnter () {
+			try 
+			{ System.in.read(); }
+			catch (Exception e) {}
+		}
 	}
