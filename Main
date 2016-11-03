@@ -7,23 +7,31 @@ public static boolean konto3000=false;
 		Dice dice = new Dice();
 		Scanner scan = new Scanner(System.in); 
 		Spiller spil = new Spiller();
-
-		int kast1 = 0;
-		int kast2 = 0; 
-
-		//	Spillet starter: 	
-		System.out.println("Velkommen \nHvor mange spillere er i?");
-		int bruger = scan.nextInt(); 
 		
+		/* Initiallisere vores variabler */
+		int kast1 = 0;
+		int kast2 = 0;
+		int bruger = 2; 
 
+		/* Lavet med henblik på udvidelser af yderligere bruger.	
+		 *System.out.println("Velkommen \nHvor mange spillere er i?");
+		 *int bruger = scan.nextInt(); 
+		 */
+
+		/* Spillet starter */
 		spil.spiller(bruger);
 
 		System.out.println("Lad spillet begynde. \n" + spil.hentNavn(0) + " starter:");
-
-	while (konto3000==false) { // Henter pengebeholdning fra konto
+	
+	
+	/* Henter pengebeholdning fra konto
+	 */
+	while (konto3000==false) { 
 		
+		System.out.println("Tryk 'enter' for at forsætte.");
 		for (int j = 0; j < bruger; j++) {
-			int sum = 0; 
+			int sum = 0;
+			Felter.trykEnter();
 			for (int n = 0; n < 1; n++) {
 				dice.roll();
 				kast1 = dice.getFaceValue();
