@@ -1,0 +1,138 @@
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class Kontotest {
+
+	
+	
+	boolean kontonegativ = false;
+	
+	boolean felt1 = false;
+	boolean felt2 = false;
+	boolean felt3 = false;
+	boolean felt4 = false;
+	boolean felt5 = false;
+	boolean felt6 = false;
+	boolean felt7 = false;
+	boolean felt8 = false;
+	boolean felt9 = false;
+	boolean felt10 = false;
+	boolean felt11 = false;
+	boolean felt12 = false;
+	boolean felt13 = false;
+	
+	@Test
+	public void testSetPengebeholdning() {
+		
+		Konto.setPengebeholdning(-1010, 0);
+		
+		if (Konto.Pengebeholdning.get(0) == 0){
+			kontonegativ = true;
+		}
+		;
+		System.out.println("Er pengebeholdningen negativ? ");
+		System.out.println("Spiller 1 har en penge beholdning på: ");
+		System.out.println( Konto.Pengebeholdning.get(0));
+		assertTrue(kontonegativ);
+		
+		
+		for(int i = 0;i<=13;i++){
+			switch(i){
+			case 0 : 
+				String Felttekst1 = "";
+				if (Felttekst1 == Felter.felttekst(0)){
+					felt1=true;
+					assertTrue(felt1);
+				}
+					break;
+				
+			case 1 : 
+				String Felttekst2 = "";
+				if (Felttekst2 == Felter.felttekst(1)){
+					felt2=true;
+					assertTrue(felt2);
+				}
+				break;
+			case 2 : 
+				String Felttekst3 = "Du har overtaget tårnet og til dit store held finder du en skattekiste med 250 penge!";
+				if (Felttekst3 == Felter.felttekst(2)){
+					felt3=true;
+					assertTrue(felt3);
+				}
+				break;
+			case 3 : 
+				String Felttekst4 = "Øv, du landede lige midt i et krater, din pung ryger ud af lommen og mister 100 penge.";
+				if (Felttekst4 == Felter.felttekst(3)){
+					felt4=true;
+					assertTrue(felt4);
+				}
+				break;
+			case 4 : 
+				String Felttekst5 = "Du er endelig nået frem til paladets porte, som tak for dit heltmod, giver kongen dig 100 penge.";
+				if (Felttekst5 == Felter.felttekst(4)){
+					felt5=true;
+					assertTrue(felt5);
+				}
+				break;
+			case 5 : 
+				String Felttekst6 = "Du er strandet midt i den kolde ørken. Du køber et tæppe af en beduiner for 20 penge.";
+				if (Felttekst6 == Felter.felttekst(5)){
+					felt6=true;
+					assertTrue(felt6);
+				}
+				break;
+			case 6 : 
+				String Felttekst7 = "Et forunderligt syn møder dig på din vej. Midt i mellem bjergene finder du en smuk by, de er alle meget rige og du modtager 180 penge";
+				if (Felttekst7 == Felter.felttekst(6)){
+					felt7=true;
+					assertTrue(felt7);
+				}
+				break;
+			case 7 : 
+				String Felttekst8 = "Du ankommer til et kloster. Det ser ikke ud som om der har været nogle her i mange år? Der er heller ingen penge at finde. Du modtager 0 penge.";
+				if (Felttekst8 == Felter.felttekst(7)){
+					felt8=true;
+					assertTrue(felt8);
+				}
+				break;
+			case 8 : 
+				String Felttekst9 = "Din fakkel er gået ud og du står nu i komplet mørke. Noget rører ved dit ben. Du kan høre en hvislelys i det fjerne. Da du endelig finder ud igen har du mistet 70 penge";
+				if (Felttekst9 == Felter.felttekst(8)){
+					felt9=true;
+					assertTrue(felt9);
+				}
+				break;
+			case 9 : 
+				String Felttekst10 = "Oppe i bjergene støder du på et par træhytter. Du går ind og får varmen og tilfældigvis ligger der 60 penge";
+				if (Felttekst10 == Felter.felttekst(9)){
+					felt10=true;
+					assertTrue(felt10);
+				}
+				break;
+			case 10 : 
+				String Felttekst11 = "Du kommer til den skræmmende vareulve mur, du bliver bidt og må bruge 80 penge på en modeliksir, men du får en ekstra tur";
+				if (Felttekst11 == Felter.felttekst(10)){
+					felt11=true;
+					assertTrue(felt11);
+				}
+				break;
+			case 11 : 
+				String Felttekst12 = "Du er blevet udfordret til en kamp i pitten, desværre taber du og mister 50 penge";
+				if (Felttekst12 == Felter.felttekst(11)){
+					felt12=true;
+					assertTrue(felt12);
+				}
+				break;
+			case 12 : 
+				String Felttekst13 = "Du finder en grotte og går der ind. Der er noget der skinner. Du opdager det er en mine fyldt med guld! Du tager så meget som du kan bære på. Du får 650 penge!";
+				if (Felttekst13 == Felter.felttekst(12)){
+					felt13=true;
+					assertTrue(felt13);
+				}
+				break;
+			}
+		}
+	}
+}
+
