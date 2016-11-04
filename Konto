@@ -37,7 +37,7 @@ public class Konto {
 		
 		/* returnere en boolean på om der er en vinder */
 		if(nykonto >=3000){
-			Ui.konto3000=true; //SKAL DETTE IKKE ÆNDRES TIL MAIN ???
+			Main.konto3000=true; //SKAL DETTE IKKE ÆNDRES TIL MAIN ???
 		}
 		Pengebeholdning.set(j,nykonto);
 	}
