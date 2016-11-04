@@ -1,50 +1,35 @@
 package cdio2;
 
-
-
-public class Dice 
-
-
-
-{
-
-	private final int MAX = 6; 	// maximum øjne værdi
-
-	private static int faceValue; // nuværende øjne værdi
-
-
-
-	// Konstruktør
-
-	public Dice()	
-
-	{
-
-		faceValue = 0;
-
-	}
-
-
-
-	// Kast terning og returner øjne værdi
-
-	public int roll()	
-
-	{
-
-		faceValue = (int)(Math.random() * MAX) + 1;
-
-	return faceValue;
-
-	}
-
+public class Dice {
 	
+	/*
+	 * Den maksimale værdi terningen kan slå, lavet som final int
+	 * En variabel med den nuværende øjen værdi
+	 */
+	private final int MAX = 6; 	
+	private static int faceValue; 
 
-	public int getFaceValue()
+	/*
+	 * Vores konstruktør
+	 */
+	public Dice() {
+		faceValue = 0;
+	}
 
-	{
 
+
+	/*
+	 * Kaster terning og returner øjen værdi
+	 */
+	public int roll() {
+		faceValue = (int)(Math.random() * MAX) + 1;
 		return faceValue;
+	}
 
+	/*
+	 * Henter øjen-værdien 
+	 '/
+	public int getFaceValue() {
+		return faceValue;
 	}
 
