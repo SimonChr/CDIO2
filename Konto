@@ -1,31 +1,43 @@
 import java.util.ArrayList;
 
 
-public class Konto
-{
-	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
-	// Laver en int array der hedder pengebeholdning
+public class Konto {
 	
-	// En metode der tilføjer et nyt element i arrayet Pengebeholdning 
-	// og sætter penge beholdningen til 1000 som default
+	/*
+	 * Laver en int ArrayList til at holde styr på spillernes pengebeholdning
+	 */
+	public static ArrayList <Integer> Pengebeholdning = new ArrayList <Integer>();
+	
+	/*
+	 *En metode der tilføjer et nyt element i arrayet Pengebeholdning 
+	 * og sætter penge beholdningen til 1000 som default
+	 */
 	public static void nyKonto(){
 	Pengebeholdning.add(1000);
 	}
 	
-	// En metode til at hente Pengebeholdning i en bestemt konto
+	/*
+	 * En metode til at hente Pengebeholdning i en bestemt konto
+	 */
 	public Integer getPengebeholdning (int j) {
 		return Pengebeholdning.get(j);
 	}
 	
-	// En metode til at ændre pengebeholdningen i en bestemt  konto
+	/*
+	 * En metode til at ændre pengebeholdningen i en bestemt  konto
+	 */
 	public static void setPengebeholdning(int pengefund, int j)
 	{
 		int nykonto = Konto.Pengebeholdning.get(j) + pengefund;
+		
+		/* Forhindre negativ konto balance */
 		if(nykonto < 0){
 			nykonto=0;
 		}
+		
+		/* returnere en boolean på om der er en vinder */
 		if(nykonto >=3000){
-			Ui.konto3000=true;
+			Ui.konto3000=true; //SKAL DETTE IKKE ÆNDRES TIL MAIN ???
 		}
 		Pengebeholdning.set(j,nykonto);
 	}
