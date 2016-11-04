@@ -25,36 +25,56 @@ public static boolean konto3000=false;
 		System.out.println("\nLad spillet begynde. \n \n" + spil.hentNavn(0) + " starter");
 	
 	
-	/* Henter pengebeholdning fra konto
+	/* 
+	 * Henter pengebeholdning fra konto
 	 */
 	while (konto3000==false) { 
 		
-	
+		/*
+		 * for løkke over antal brugere, der skal være med i spillet.
+		 */
 		for (int j = 0; j < bruger; j++) {
 			int sum = 0;
+			
+			/*
+			 * Input fra brugeren, for at komme videre i spillet.
+			 * Forhindre at spillet spiller sig selv. 
+			 */
 			Felter.trykEnter();
 			if (konto3000== true)
 				return;
+			
+			/*  
+			 * Løkke for ekstra tur, kunne argumentere for at lave det som en do- while løkke
+			 */
 			for (int n = 0; n < 1; n++) {
 				dice.roll();
 				kast1 = dice.getFaceValue();
 				dice.roll();
 				kast2 = dice.getFaceValue();
 				sum=kast1+kast2;
+				
+				/*
+				 * Udskrift til spilleren om felt, penge beholdning osv. 
+				 */
 				System.out.println("Du er landet på felt " + sum);
 				System.out.println(  Felter.felttekst(sum));
-				System.out.println( spil.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		//player.name(j) skal rettes så den passer med 
-						" & din penge beholdning ændres med " + Felter.feltVærdi(sum)) ;			//player classen. 
+				System.out.println( spil.hentNavn(j) + " landte på " + Felter.feltNavn(sum) + 		
+						" & din penge beholdning ændres med " + Felter.feltVærdi(sum)) ; 
 				
+				/*
+				 * Retter spillerens konto, så den passer med den nye pengebeholdning
+				 */
 				Konto.setPengebeholdning(Felter.feltVærdi(sum), j);
 				System.out.println(spil.hentNavn(j) + "'s pengebeholdning er nu " + Konto.Pengebeholdning.get(j));
 				System.out.println("");
 				
-				//Ekstra tur ved vareulvemur.	
+				/* Ekstra tur ved vareulvemur */
 				if (sum == 10){
 					n = -1;
 				} 	
 			}
+			/* Annoncere vinderen */
 			if (konto3000 == true){
 				System.out.println("Tillykke du har vundet " + spil.hentNavn(j) + "!");
 			return;
